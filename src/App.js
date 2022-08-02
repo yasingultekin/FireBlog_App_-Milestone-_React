@@ -1,13 +1,14 @@
-import { useState } from "react";
 import AppRouter from "./app-router/AppRouter";
+import { BrowserRouter } from "react-router-dom";
+
 import "./App.css";
-import Navbar from "./components/Navbar";
-import AuthContextProvider from "./contexts/AuthContext";
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
     </div>
   );
 }
