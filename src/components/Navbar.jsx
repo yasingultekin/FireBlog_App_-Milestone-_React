@@ -32,8 +32,8 @@ const hover = {
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const currentUser = { displayName: "yasin gultekin" };
-  // const currentUser = false;
+  // const currentUser = { displayName: "yasin gultekin" };
+  const currentUser = false;
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -85,7 +85,6 @@ const Navbar = () => {
               flexGrow: { xs: "none" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
             }}
