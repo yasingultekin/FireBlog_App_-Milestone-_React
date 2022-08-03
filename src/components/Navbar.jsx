@@ -32,8 +32,8 @@ const hover = {
 const Navbar = () => {
   const navigate = useNavigate();
 
-  // const currentUser = { displayName: "yasin gultekin" };
-  const currentUser = false;
+  const currentUser = { displayName: "yasin gultekin" };
+  // const currentUser = false;
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
