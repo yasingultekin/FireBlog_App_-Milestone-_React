@@ -32,7 +32,7 @@ const hover = {
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const { currentUser } = useContext(AuthContext);
+  const currentUser = useContext(AuthContext);
 
   // const currentUser = { displayName: "yasin gultekin" };
   // const currentUser = false;
