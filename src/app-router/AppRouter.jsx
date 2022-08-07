@@ -4,10 +4,12 @@ import Navbar from "../components/Navbar";
 import { AuthContext } from "../contexts/AuthContext";
 import { AddUser } from "../helpers/functions";
 import Dashboard from "../pages/Dashboard";
+import Details from "../pages/Details";
 import Login from "../pages/Login";
 import NewBlog from "../pages/NewBlog";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register";
+import PrivateRouter from "./PrivateRouter";
 
 const initialValues = { title: "", img: "", content: "" };
 
@@ -33,6 +35,19 @@ const AppRouter = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="details/:id" element={<PrivateRouter />}>
+          <Route
+            path=""
+            element={
+              <Details
+                info={info}
+                setInfo={setInfo}
+                handleSubmit={handleSubmit}
+              />
+            }
+          />
+        </Route>
+
         <Route
           path="login"
           element={<Login email={email} setEmail={setEmail} />}
