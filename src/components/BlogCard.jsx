@@ -59,10 +59,21 @@ export default function RecipeReviewCard({ title, img, content, email, id }) {
           <>
             <CardHeader />
 
+            {/* {img ? (
+              <CardMedia component="img" height="194" image={img} />
+            ) : (
+              <CardMedia
+                component="img"
+                height="194"
+                image={placeholder}
+                alt={title}
+              />
+            )} */}
+
             <CardMedia
               component="img"
               height="194"
-              image={img}
+              image={img ? img : placeholder}
               alt={title}
               onClick={() => navigate(`details/${id}`, { state: item })}
             />
