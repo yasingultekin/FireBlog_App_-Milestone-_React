@@ -6,6 +6,7 @@ import {
   set,
   onValue,
   update,
+  remove,
 } from "firebase/database";
 import { useEffect, useState } from "react";
 
@@ -40,6 +41,11 @@ export const useFetch = () => {
     });
   }, []);
   return { isLoading, contentList };
+};
+
+export const DeleteUser = (id) => {
+  const db = getDatabase(app);
+  remove(ref(db, "users/" + id));
 };
 
 export const UpdateUser = (info) => {

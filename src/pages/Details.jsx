@@ -17,7 +17,7 @@ import placeholder from "../assets/placeholder.png";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { useFetch } from "../helpers/functions";
+import { DeleteUser, useFetch } from "../helpers/functions";
 import { useLocation, useNavigate } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
@@ -31,6 +31,11 @@ const Details = ({}) => {
 
   // console.log("currentUser", currentUser.email);
   // console.log("state", state.email);
+
+  const handleDelete = () => {
+    DeleteUser(state.id);
+    navigate("/");
+  };
 
   return (
     <div className="details-container">
@@ -119,7 +124,12 @@ const Details = ({}) => {
             sx={{ m: 4, justifyContent: "center" }}
           >
             <Button variant="outlined">UPDATE</Button>
-            <Button variant="contained" color="error" endIcon={<DeleteIcon />}>
+            <Button
+              variant="contained"
+              color="error"
+              onClick={handleDelete}
+              endIcon={<DeleteIcon />}
+            >
               Delete
             </Button>
           </Stack>
