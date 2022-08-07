@@ -9,6 +9,8 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+import { toastSuccessNotify, toastErrorNotify } from "./toastNotify";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -36,9 +38,10 @@ export const createUser = async (email, password, navigate, displayName) => {
       password
     );
     console.log(userCredential);
+    toastSuccessNotify("Registered successfully!");
     navigate("/");
   } catch (error) {
-    console.log(error);
+    toastErrorNotify(error.message);
   }
 };
 
@@ -50,9 +53,10 @@ export const signIn = async (email, password, navigate) => {
       password
     );
     console.log(userCredential);
+    toastSuccessNotify("Logged in successfully!");
     navigate("/");
   } catch (error) {
-    console.log(error);
+    toastErrorNotify(error.message);
   }
 };
 
@@ -68,16 +72,18 @@ export const userObserver = (setCurrentUser) => {
 
 export const logOut = () => {
   signOut(auth);
+  toastSuccessNotify("Logged out successfully!");
 };
 
 export const signUpProvider = (navigate) => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
+      toastSuccessNotify("Logged in successfully!");
       navigate("/");
     })
     .catch((error) => {
-      console.log(error);
+      toastErrorNotify(error.message);
     });
 };
 

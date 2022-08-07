@@ -3,6 +3,7 @@ import React from "react";
 import BlogCard from "../components/BlogCard";
 import Box from "@mui/material/Box";
 import { useFetch } from "../helpers/functions";
+import loading from "../assets/loading.gif";
 
 const Dashboard = () => {
   const { isLoading, contentList } = useFetch();
@@ -22,15 +23,11 @@ const Dashboard = () => {
         </Typography>
       </Box>
       <div className="blog-card d-flex justify-content-center flex-wrap">
-        {isLoading ? (
-          <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-            <TableCell colSpan={5} align="center">
-              Loading
-            </TableCell>
-          </TableRow>
-        ) : (
-          contentList?.map((item, index) => <BlogCard key={index} {...item} />)
-        )}
+        {isLoading
+          ? { loading }
+          : contentList?.map((item, index) => (
+              <BlogCard key={index} {...item} />
+            ))}
       </div>
     </Box>
   );
