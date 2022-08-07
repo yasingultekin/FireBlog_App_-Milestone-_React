@@ -30,7 +30,7 @@ export default function SignIn() {
     e.preventDefault();
     // console.log(email, password);
     const displayName = `${email}`;
-    // createUser(email, password, navigate, displayName);
+    createUser(email, password, navigate, displayName);
   };
   const handleProviderLogin = () => {
     signUpProvider(navigate);
