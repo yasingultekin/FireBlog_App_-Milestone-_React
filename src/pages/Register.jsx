@@ -52,7 +52,6 @@ export default function SignIn() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          mb: "3rem",
         }}
       >
         <Box
@@ -60,9 +59,9 @@ export default function SignIn() {
             backgroundColor: "white",
             boxShadow: "10px 10px 5px 0px rgba(0,0,0,0.61)",
             borderRadius: "10px",
-            height: "650px",
+            height: "%100",
             width: "450px",
-            marginBottom: "10px",
+            marginBottom: "-3rem",
           }}
         >
           <CssBaseline />

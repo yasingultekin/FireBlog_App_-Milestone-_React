@@ -130,6 +130,11 @@ const Details = ({}) => {
             </Button>
           </Stack>
         )}
+        <CardActions className="home-button">
+          <Button size="large" onClick={() => navigate("/")}>
+            HOME
+          </Button>
+        </CardActions>
       </Box>
     </div>
   );

@@ -5,8 +5,9 @@
 
 .blog-card,
 .details-container,
-.profile-card {
-  margin: 3rem;
+.profile-card,
+.new-blog-container {
+  margin: 5rem;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -26,4 +27,10 @@
 
 .details-h4 {
   text-align: center;
+}
+
+.home-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

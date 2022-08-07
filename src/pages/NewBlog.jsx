@@ -35,6 +35,7 @@ export default function NewBlog({ info, setInfo, handleSubmit }) {
         sx={{
           backgroundColor: "white",
         }}
+        className="new-blog-container"
       >
         <Box>
           <CssBaseline />

@@ -26,6 +26,15 @@ export default function MediaCard() {
         <Typography gutterBottom variant="h5" component="div">
           {currentUser.email}
         </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          {currentUser && (
+            <>
+              <h5 className="mb-0 text-capitalize text-center">
+                {currentUser.displayName}
+              </h5>
+            </>
+          )}
+        </Typography>
       </CardContent>
       <CardActions className="home-button">
         <Button size="large" onClick={() => navigate("/")}>
