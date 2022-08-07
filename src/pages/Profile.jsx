@@ -1,7 +1,37 @@
-import React from "react";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { AuthContext } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-const Profile = () => {
-  return <div>Profile</div>;
-};
+export default function MediaCard() {
+  const currentUser = React.useContext(AuthContext);
+  const navigate = useNavigate();
 
-export default Profile;
+  console.log(currentUser.email);
+
+  return (
+    <Card sx={{ maxWidth: 500, m: 17, height: 450 }} className="profile-card">
+      <CardMedia
+        component="img"
+        height="300"
+        image="https://picsum.photos/1600/900"
+        alt="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {currentUser.email}
+        </Typography>
+      </CardContent>
+      <CardActions className="home-button">
+        <Button size="large" onClick={() => navigate("/")}>
+          HOME
+        </Button>
+      </CardActions>
+    </Card>
+  );
+}

@@ -63,16 +63,12 @@ const Details = ({}) => {
           <Card sx={{ width: 600, mt: 3 }} className="card-content">
             <CardHeader />
 
-            {state.img ? (
-              <CardMedia component="img" height="500" image={state.img} />
-            ) : (
-              <CardMedia
-                component="img"
-                height="194"
-                image={placeholder}
-                alt={state.title}
-              />
-            )}
+            <CardMedia
+              component="img"
+              height="194"
+              image={state.img ? state.img : placeholder}
+              alt={state.title}
+            />
 
             <CardContent>
               <Typography

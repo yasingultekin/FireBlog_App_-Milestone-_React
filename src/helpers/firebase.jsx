@@ -28,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-export const createUser = async (email, password, navigate) => {
+export const createUser = async (email, password, navigate, displayName) => {
   try {
     let userCredential = await createUserWithEmailAndPassword(
       auth,

@@ -4,7 +4,8 @@
 }
 
 .blog-card,
-.details-container {
+.details-container,
+.profile-card {
   margin: 3rem;
   display: flex;
   flex-wrap: nowrap;
@@ -13,8 +14,13 @@
   gap: 1rem;
 }
 
+.profile-card {
+  flex-direction: column;
+}
+
 .appBar,
-.card-content {
+.card-content,
+.home-button {
   cursor: pointer;
 }
 
