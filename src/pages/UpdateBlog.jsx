@@ -18,13 +18,14 @@ import { createUser, signIn, signUpProvider } from "../helpers/firebase";
 import { useLocation, useNavigate } from "react-router-dom";
 import { UpdateCard, useFetch } from "../helpers/functions";
 import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from "react";
 
 const theme = createTheme();
 
 export default function UpdateBlog() {
   const navigate = useNavigate();
 
-  // const currentUser = useContext(AuthContext);
+  const currentUser = useContext(AuthContext);
 
   const { state } = useLocation();
 
@@ -37,7 +38,7 @@ export default function UpdateBlog() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(title, img, content);
-    UpdateCard(img, title, content, state.id, navigate);
+    UpdateCard(img, title, content, state.id, navigate, currentUser.email);
   };
 
   return (
@@ -79,7 +80,7 @@ export default function UpdateBlog() {
               }}
             >
               <Typography variant="h4" component="div" gutterBottom>
-                ──── NEW BLOG ────
+                ──── UPDATE BLOG ────
               </Typography>
             </Box>
             <Box
