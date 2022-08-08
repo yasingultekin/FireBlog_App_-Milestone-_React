@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import blog from "../assets/blok.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createUser, signIn, signUpProvider } from "../helpers/firebase";
 import { useLocation, useNavigate } from "react-router-dom";
 import { UpdateCard, useFetch } from "../helpers/functions";
@@ -22,24 +22,37 @@ import { useContext } from "react";
 
 const theme = createTheme();
 
-export default function UpdateBlog() {
+export default function UpdateBlog({ info, setInfo }) {
   const navigate = useNavigate();
 
-  const currentUser = useContext(AuthContext);
+  // const currentUser = useContext(AuthContext);
 
   const { state } = useLocation();
 
   console.log("state", state);
 
-  const [title, setTitle] = useState(state.title);
-  const [img, setImg] = useState(state.img);
-  const [content, setContent] = useState(state.content);
+  // const [title, setTitle] = useState(state.title);
+  // const [img, setImg] = useState(state.img);
+  // const [content, setContent] = useState(state.content);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(title, img, content);
-    UpdateCard(img, title, content, state.id, navigate, currentUser.email);
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // console.log(title, img, content);
+  //   UpdateCard(img, title, content, state.id, navigate, currentUser.email);
+  // };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInfo({ ...info, [name]: value });
   };
+
+  const handleSubmit = () => {
+    UpdateCard(info, navigate);
+  };
+
+  useEffect(() => {
+    setInfo(state);
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -100,8 +113,9 @@ export default function UpdateBlog() {
                 autoComplete="title"
                 autoFocus
                 sx={{ width: "350px" }}
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={info.title}
+                // onChange={(e) => setTitle(e.target.value)}
+                onChange={handleChange}
               />
               <TextField
                 margin="normal"
@@ -112,8 +126,9 @@ export default function UpdateBlog() {
                 type="text"
                 id="img"
                 autoComplete="imageURL"
-                value={img}
-                onChange={(e) => setImg(e.target.value)}
+                value={info.img}
+                // onChange={(e) => setImg(e.target.value)}
+                onChange={handleChange}
               />
               <TextField
                 style={{ marginTop: "1rem" }}
@@ -126,8 +141,9 @@ export default function UpdateBlog() {
                 id="info"
                 multiline
                 rows={7}
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
+                value={info.content}
+                // onChange={(e) => setContent(e.target.value)}
+                onChange={handleChange}
               />
               <Button
                 type="submit"

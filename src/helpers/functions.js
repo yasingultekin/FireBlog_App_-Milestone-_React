@@ -49,15 +49,25 @@ export const DeleteCard = (id) => {
   remove(ref(db, "users/" + id));
 };
 
-export const UpdateCard = (img, title, content, email, id, navigate) => {
+// export const UpdateCard = (img, title, content, email, id, navigate) => {
+//   const db = getDatabase(app);
+//   const updates = {};
+//   updates["users/" + id] = {
+//     img: img,
+//     title: title,
+//     content: content,
+//     email: email,
+//   };
+//   navigate("/");
+
+//   return update(ref(db), updates);
+// };
+
+export const UpdateCard = (info, navigate) => {
+  console.log(info);
   const db = getDatabase(app);
   const updates = {};
-  updates["users/" + id] = {
-    img: img,
-    title: title,
-    content: content,
-    email: email,
-  };
+  updates["users/" + info.id] = info;
   navigate("/");
 
   return update(ref(db), updates);
