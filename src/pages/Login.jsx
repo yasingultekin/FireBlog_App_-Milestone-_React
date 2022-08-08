@@ -14,7 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import blog from "../assets/blok.png";
 import { useState } from "react";
-import { signIn, signUpProvider } from "../helpers/firebase";
+import { createUser, signIn, signUpProvider } from "../helpers/firebase";
 import { useNavigate } from "react-router-dom";
 import google from "../assets/google.png";
 
@@ -26,7 +26,8 @@ export default function SignIn({ setEmail, email }) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    signIn(email, password, navigate);
+    const displayName = `${email}`;
+    signIn(email, password, navigate, displayName);
   };
 
   const handleProviderLogin = () => {

@@ -40,8 +40,8 @@ export const createUser = async (email, password, navigate, displayName) => {
     console.log(userCredential);
     toastSuccessNotify("Registered successfully!");
     navigate("/");
-  } catch (error) {
-    toastErrorNotify(error.message);
+  } catch (err) {
+    toastErrorNotify(err.message);
   }
 };
 
@@ -55,8 +55,8 @@ export const signIn = async (email, password, navigate) => {
     console.log(userCredential);
     toastSuccessNotify("Logged in successfully!");
     navigate("/");
-  } catch (error) {
-    toastErrorNotify(error.message);
+  } catch (err) {
+    toastErrorNotify(err.message);
   }
 };
 
@@ -82,8 +82,8 @@ export const signUpProvider = (navigate) => {
       toastSuccessNotify("Logged in successfully!");
       navigate("/");
     })
-    .catch((error) => {
-      toastErrorNotify(error.message);
+    .catch((err) => {
+      toastErrorNotify(err.message);
     });
 };
 

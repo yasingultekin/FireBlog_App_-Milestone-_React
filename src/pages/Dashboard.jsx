@@ -8,18 +8,20 @@ import loading from "../assets/loading.gif";
 const Dashboard = () => {
   const { isLoading, contentList } = useFetch();
 
+  console.log("contentList", contentList);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
-          m: 2,
+          mt: 13,
           color: "primary",
         }}
       >
         <Typography variant="h4" component="div" gutterBottom>
-          ──── DASHBOARD ────
+          ──── DASHBOARD ───
         </Typography>
       </Box>
       <div className="blog-card d-flex justify-content-center flex-wrap">

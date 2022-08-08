@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import NewBlog from "../pages/NewBlog";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register";
+import UpdateBlog from "../pages/UpdateBlog";
 import PrivateRouter from "./PrivateRouter";
 
 const initialValues = { title: "", img: "", content: "" };
@@ -65,6 +66,16 @@ const AppRouter = () => {
           }
         />
         <Route path="logout" element={<Login />} />
+        <Route
+          path="update"
+          element={
+            <UpdateBlog
+              info={info}
+              setInfo={setInfo}
+              handleSubmit={handleSubmit}
+            />
+          }
+        />
       </Routes>
     </>
   );

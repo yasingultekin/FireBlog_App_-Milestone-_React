@@ -9,6 +9,7 @@ import {
   remove,
 } from "firebase/database";
 import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 
 export const AddUser = (info, currentUser) => {
   const db = getDatabase(app);
@@ -43,15 +44,16 @@ export const useFetch = () => {
   return { isLoading, contentList };
 };
 
-export const DeleteUser = (id) => {
+export const DeleteCard = (id) => {
   const db = getDatabase(app);
   remove(ref(db, "users/" + id));
 };
 
-export const UpdateUser = (info) => {
+export const UpdateCard = (img, title, content, id, navigate) => {
   const db = getDatabase(app);
   const updates = {};
-  updates["users/" + info.id] = info;
+  updates["users/" + id] = { img: img, title: title, content: content };
+  navigate("/");
 
   return update(ref(db), updates);
 };

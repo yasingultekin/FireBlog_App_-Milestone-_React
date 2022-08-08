@@ -12,7 +12,7 @@ export default function MediaCard() {
   const currentUser = React.useContext(AuthContext);
   const navigate = useNavigate();
 
-  console.log(currentUser.email);
+  // console.log(currentUser.email);
 
   return (
     <Card sx={{ maxWidth: 500, m: 17, height: 450 }} className="profile-card">

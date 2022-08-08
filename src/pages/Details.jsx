@@ -17,15 +17,21 @@ import placeholder from "../assets/placeholder.png";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { DeleteUser, useFetch } from "../helpers/functions";
+import {
+  DeleteUser,
+  useFetch,
+  UpdateUser,
+  DeleteCard,
+} from "../helpers/functions";
 import { useLocation, useNavigate } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import { AuthContext } from "../contexts/AuthContext";
 
-const Details = ({}) => {
+const Details = () => {
   const navigate = useNavigate();
   const { isLoading, contentList } = useFetch();
+
   const currentUser = useContext(AuthContext);
   const { state } = useLocation();
 
@@ -33,9 +39,11 @@ const Details = ({}) => {
   // console.log("state", state.email);
 
   const handleDelete = () => {
-    DeleteUser(state.id);
+    DeleteCard(state.id);
     navigate("/");
   };
+
+  console.log("state", state);
 
   return (
     <div className="details-container">
@@ -119,7 +127,12 @@ const Details = ({}) => {
             spacing={2}
             sx={{ m: 4, justifyContent: "center" }}
           >
-            <Button variant="outlined">UPDATE</Button>
+            <Button
+              variant="outlined"
+              onClick={() => navigate("/update", { state: state })}
+            >
+              UPDATE
+            </Button>
             <Button
               variant="contained"
               color="error"
