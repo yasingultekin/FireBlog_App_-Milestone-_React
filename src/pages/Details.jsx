@@ -53,12 +53,7 @@ const Details = () => {
           color: "primary",
         }}
       >
-        <Typography
-          variant="h4"
-          component="div"
-          gutterBottom
-          className="details-h4"
-        >
+        <Typography variant="h4" component="div" gutterBottom className="h4">
           ─── DETAILS ───
         </Typography>
         {isLoading ? (

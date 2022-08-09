@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Girassol&display=swap");
+
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -27,6 +29,8 @@
 
 .details-h4 {
   text-align: center;
+  margin-top: 8rem;
+  font-family: "Girassol";
 }
 
 .home-button {

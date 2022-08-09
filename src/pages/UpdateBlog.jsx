@@ -92,7 +92,14 @@ export default function UpdateBlog({ info, setInfo }) {
                 color: "primary",
               }}
             >
-              <Typography variant="h4" component="div" gutterBottom>
+              <Typography
+                variant="h4"
+                component="div"
+                gutterBottom
+                sx={{
+                  fontFamily: "Girassol",
+                }}
+              >
                 ──── UPDATE BLOG ────
               </Typography>
             </Box>

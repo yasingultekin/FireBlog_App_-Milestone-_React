@@ -82,7 +82,13 @@ export default function SignIn({ setEmail, email }) {
             >
               <img src={blog} alt={blog} />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography
+              component="h1"
+              variant="h5"
+              sx={{
+                fontFamily: "Girassol",
+              }}
+            >
               ── LOGIN ──
             </Typography>
             <Box

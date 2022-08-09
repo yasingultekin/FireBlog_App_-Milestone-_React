@@ -20,7 +20,15 @@ const Dashboard = () => {
           color: "primary",
         }}
       >
-        <Typography variant="h4" component="div" gutterBottom>
+        <Typography
+          variant="h4"
+          component="div"
+          gutterBottom
+          className="dashboard-h4"
+          sx={{
+            fontFamily: "Girassol",
+          }}
+        >
           ──── DASHBOARD ───
         </Typography>
       </Box>

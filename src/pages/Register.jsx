@@ -83,7 +83,13 @@ export default function SignIn() {
             >
               <img src={blog} />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography
+              component="h1"
+              variant="h5"
+              sx={{
+                fontFamily: "Girassol",
+              }}
+            >
               ── REGISTER ──
             </Typography>
             <Box
