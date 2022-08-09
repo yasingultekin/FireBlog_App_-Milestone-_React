@@ -74,12 +74,12 @@ const Details = () => {
             </TableCell>
           </TableRow>
         ) : (
-          <Card sx={{ width: 600, mt: 3 }} className="card-content">
+          <Card sx={{ width: 650, mt: 3 }} className="card-content">
             <CardHeader />
 
             <CardMedia
               component="img"
-              height="194"
+              height="350"
               image={state.img ? state.img : placeholder}
               alt={state.title}
             />
@@ -108,7 +108,6 @@ const Details = () => {
                 sx={{
                   fontSize: "1.2rem",
                   color: "black",
-                  mt: "3",
                 }}
               >
                 <AccountCircleRoundedIcon /> {state.email}

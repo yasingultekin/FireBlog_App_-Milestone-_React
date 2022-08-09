@@ -19,7 +19,7 @@ export default function MediaCard() {
       sx={{
         maxWidth: 500,
         m: "auto",
-        height: "100vh",
+        height: "90vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
