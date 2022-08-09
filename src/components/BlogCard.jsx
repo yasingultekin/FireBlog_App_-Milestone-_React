@@ -71,27 +71,32 @@ export default function RecipeReviewCard({ title, img, content, email, id }) {
             >
               <Typography
                 variant="body2"
-                color="text.secondary"
                 sx={{
-                  fontSize: "1.2rem",
-                  color: "black",
-                  textTransform: "uppercase",
+                  fontSize: "1.5rem",
+                  fontWeight: "bold",
+                  color: "",
+                  textTransform: "capitalize",
                   mb: 2,
                 }}
               >
                 {title}
               </Typography>
 
-              <Typography variant="body2" color="text.secondary">
-                {`${content.substring(0, 75)}...`}
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ fontSize: "1rem" }}
+              >
+                {`${content.substring(0, 165)}...`}
               </Typography>
 
               <Typography
                 variant="body2"
                 color="text.secondary"
                 sx={{
-                  fontSize: "1.2rem",
+                  fontSize: "1.3rem",
                   color: "black",
+                  mt: "1rem",
                 }}
               >
                 <AccountCircleRoundedIcon /> {email}

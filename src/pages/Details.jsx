@@ -91,7 +91,7 @@ const Details = () => {
                 sx={{
                   fontSize: "1.2rem",
                   color: "black",
-                  textTransform: "uppercase",
+                  textTransform: "capitalize",
                   mb: 2,
                 }}
               >
@@ -108,6 +108,7 @@ const Details = () => {
                 sx={{
                   fontSize: "1.2rem",
                   color: "black",
+                  mt: "3",
                 }}
               >
                 <AccountCircleRoundedIcon /> {state.email}

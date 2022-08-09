@@ -15,7 +15,17 @@ export default function MediaCard() {
   // console.log(currentUser.email);
 
   return (
-    <Card sx={{ maxWidth: 500, m: 17, height: 450 }} className="profile-card">
+    <Card
+      sx={{
+        maxWidth: 500,
+        m: "auto",
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      className="profile-card"
+    >
       <CardMedia
         component="img"
         height="300"
