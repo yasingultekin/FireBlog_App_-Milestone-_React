@@ -48,6 +48,7 @@ export default function UpdateBlog({ info, setInfo }) {
 
   const handleSubmit = () => {
     UpdateCard(info, navigate);
+    setInfo("");
   };
 
   useEffect(() => {
@@ -98,6 +99,7 @@ export default function UpdateBlog({ info, setInfo }) {
                 gutterBottom
                 sx={{
                   fontFamily: "Girassol",
+                  color: "primary.dark",
                 }}
               >
                 ──── UPDATE BLOG ────

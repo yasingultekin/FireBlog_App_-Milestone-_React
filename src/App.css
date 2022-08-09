@@ -27,14 +27,12 @@
   cursor: pointer;
 }
 
-.details-h4 {
-  text-align: center;
-  margin-top: 8rem;
-  font-family: "Girassol";
-}
-
 .home-button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navlink:hover {
+  background-color: lightgray;
 }

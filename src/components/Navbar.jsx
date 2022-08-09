@@ -58,7 +58,7 @@ const Navbar = () => {
     <AppBar
       className="appBar"
       sx={{
-        backgroundColor: "#046582",
+        backgroundColor: "primary",
       }}
     >
       <Container maxWidth="xl">
@@ -78,19 +78,20 @@ const Navbar = () => {
           <Typography
             variant="h5"
             noWraps
-            component="a"
+            // component="a"
             onClick={() => navigate("/")}
             sx={{
-              mr: 2,
-              display: "flex",
-              flexGrow: { xs: "none" },
-              fontFamily: "monospace",
-              fontWeight: 700,
+              // mr: 2,
+              // display: "flex",
+              // flexGrow: { xs: "none" },
+              fontFamily: "Girassol",
+              // fontWeight: 600,
               color: "inherit",
               textDecoration: "none",
+              fontSize: "3rem",
             }}
           >
-            {`<gultekin/> Blog`}
+            gultekin blog
           </Typography>
           <div className="d-flex text white align-items-center">
             {currentUser ? (
@@ -127,17 +128,32 @@ const Navbar = () => {
                         width: "5rem",
                       }}
                     >
-                      <NavLink to="profile" style={{ textDecoration: "none" }}>
+                      <NavLink
+                        to="profile"
+                        style={{
+                          textDecoration: "none",
+                          color: "black",
+                        }}
+                        className="navlink"
+                      >
                         <Typography textAlign="center" m=".5rem">
                           Profile
                         </Typography>
                       </NavLink>
-                      <NavLink to="newblog" style={{ textDecoration: "none" }}>
+                      <NavLink
+                        to="newblog"
+                        style={{ textDecoration: "none", color: "black" }}
+                        className="navlink"
+                      >
                         <Typography textAlign="center" mb=".5rem">
                           New
                         </Typography>
                       </NavLink>
-                      <NavLink to="login" style={{ textDecoration: "none" }}>
+                      <NavLink
+                        to="login"
+                        style={{ textDecoration: "none", color: "black" }}
+                        className="navlink"
+                      >
                         <Typography
                           textAlign="center"
                           mb=".5rem"
@@ -179,12 +195,24 @@ const Navbar = () => {
                         width: "5rem",
                       }}
                     >
-                      <NavLink to="login" style={{ textDecoration: "none" }}>
+                      <NavLink
+                        to="login"
+                        style={{ textDecoration: "none", color: "black" }}
+                        className="navlink"
+                      >
                         <Typography textAlign="center" m=".5rem">
                           Login
                         </Typography>
                       </NavLink>
-                      <NavLink to="register" style={{ textDecoration: "none" }}>
+                      <NavLink
+                        to="register"
+                        style={{
+                          textDecoration: "none",
+                          color: "black",
+                          height: "2.3rem",
+                        }}
+                        className="navlink"
+                      >
                         <Typography textAlign="center">Register</Typography>
                       </NavLink>
                     </Box>

@@ -53,7 +53,18 @@ const Details = () => {
           color: "primary",
         }}
       >
-        <Typography variant="h4" component="div" gutterBottom className="h4">
+        <Typography
+          variant="h4"
+          component="div"
+          gutterBottom
+          className="h4"
+          sx={{
+            fontFamily: "Girassol",
+            color: "primary.dark",
+            textAlign: "center",
+            marginTop: "7rem",
+          }}
+        >
           ─── DETAILS ───
         </Typography>
         {isLoading ? (

@@ -64,7 +64,15 @@ export default function NewBlog({ info, setInfo, handleSubmit }) {
                 color: "primary",
               }}
             >
-              <Typography variant="h4" component="div" gutterBottom>
+              <Typography
+                variant="h4"
+                component="div"
+                gutterBottom
+                sx={{
+                  fontFamily: "Girassol",
+                  color: "primary.dark",
+                }}
+              >
                 ──── NEW BLOG ────
               </Typography>
             </Box>

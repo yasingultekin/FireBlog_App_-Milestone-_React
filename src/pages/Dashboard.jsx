@@ -27,6 +27,7 @@ const Dashboard = () => {
           className="dashboard-h4"
           sx={{
             fontFamily: "Girassol",
+            color: "primary.dark",
           }}
         >
           ──── DASHBOARD ───
