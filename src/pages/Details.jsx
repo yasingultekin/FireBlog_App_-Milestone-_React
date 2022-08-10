@@ -123,6 +123,7 @@ const Details = () => {
                 variant="body2"
                 color="text.secondary"
                 sx={{
+                  mt: 3,
                   fontSize: "1.2rem",
                   color: "black",
                 }}

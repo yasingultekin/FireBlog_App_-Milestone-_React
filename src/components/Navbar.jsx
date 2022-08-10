@@ -5,29 +5,14 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import clarusway from "../assets/cw.jpeg";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import Login from "../pages/Login";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { logOut } from "../helpers/firebase";
-
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Login", "Register"];
-
-const hover = {
-  "&:hover": {
-    backgroundColor: "rgb(7, 177, 77, 0.42)",
-  },
-};
 
 const Navbar = () => {
   const currentUser = useContext(AuthContext);
