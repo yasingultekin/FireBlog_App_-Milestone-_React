@@ -12,7 +12,7 @@ import Register from "../pages/Register";
 import UpdateBlog from "../pages/UpdateBlog";
 import PrivateRouter from "./PrivateRouter";
 
-const initialValues = { title: "", img: "", content: "" };
+const initialValues = { title: "", img: "", content: "", date: "" };
 
 const AppRouter = () => {
   const currentUser = useContext(AuthContext);

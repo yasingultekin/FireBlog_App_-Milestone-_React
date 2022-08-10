@@ -81,11 +81,7 @@ const Navbar = () => {
             // component="a"
             onClick={() => navigate("/")}
             sx={{
-              // mr: 2,
-              // display: "flex",
-              // flexGrow: { xs: "none" },
               fontFamily: "Girassol",
-              // fontWeight: 600,
               color: "inherit",
               textDecoration: "none",
               fontSize: "3rem",

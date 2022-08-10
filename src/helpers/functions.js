@@ -20,6 +20,7 @@ export const AddUser = (info, currentUser) => {
     img: info.img,
     content: info.content,
     email: currentUser,
+    date: info.date,
   });
 };
 

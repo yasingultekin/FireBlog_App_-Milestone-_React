@@ -34,11 +34,13 @@ const Dashboard = () => {
         </Typography>
       </Box>
       <div className="blog-card d-flex justify-content-center flex-wrap">
-        {isLoading
-          ? { loading }
-          : contentList?.map((item, index) => (
-              <BlogCard key={index} {...item} />
-            ))}
+        {isLoading ? (
+          <Box>
+            <img src={loading} alt="loading" />
+          </Box>
+        ) : (
+          contentList?.map((item, index) => <BlogCard key={index} {...item} />)
+        )}
       </div>
     </Box>
   );

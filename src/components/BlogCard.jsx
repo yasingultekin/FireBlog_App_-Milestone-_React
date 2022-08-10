@@ -37,10 +37,24 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard({ title, img, content, email, id }) {
+export default function RecipeReviewCard({
+  title,
+  img,
+  content,
+  email,
+  id,
+  date,
+}) {
   const navigate = useNavigate();
   const info = [
-    { title: title, img: img, content: content, id: id, email: email },
+    {
+      title: title,
+      img: img,
+      content: content,
+      id: id,
+      email: email,
+      date: date,
+    },
   ];
   // console.log(info);
   const [expanded, setExpanded] = useState(false);
@@ -54,7 +68,7 @@ export default function RecipeReviewCard({ title, img, content, email, id }) {
   return (
     <Card sx={{ width: 400, m: 3 }} className="card-content">
       {info.map((item) => {
-        const { title, img, content, id, email } = item;
+        const { title, img, content, id, email, date } = item;
         return (
           <>
             <CardHeader />
@@ -80,6 +94,14 @@ export default function RecipeReviewCard({ title, img, content, email, id }) {
                 }}
               >
                 {title}
+              </Typography>
+
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ fontSize: "1rem" }}
+              >
+                {date}
               </Typography>
 
               <Typography
