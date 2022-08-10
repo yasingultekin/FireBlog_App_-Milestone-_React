@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { AuthContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
 
 export default function MediaCard() {
   const currentUser = React.useContext(AuthContext);
@@ -47,7 +48,13 @@ export default function MediaCard() {
         </Typography>
       </CardContent>
       <CardActions className="home-button">
-        <Button size="large" onClick={() => navigate("/")}>
+        <Button
+          variant="contained"
+          size="large"
+          color="secondary"
+          endIcon={<HomeIcon />}
+          onClick={() => navigate("/")}
+        >
           HOME
         </Button>
       </CardActions>
