@@ -6,7 +6,6 @@
 }
 
 .blog-card,
-.details-container,
 .new-blog-container {
   /* margin: 5rem; */
   display: flex;
@@ -43,5 +42,5 @@
 }
 
 span {
-  font-weight: 700;
+  font-weight: 800;
 }

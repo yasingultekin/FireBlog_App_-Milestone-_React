@@ -63,8 +63,11 @@ const Navbar = () => {
     <AppBar
       className="appBar"
       sx={{
-        backgroundColor: "warning",
+        backgroundColor: "primary",
       }}
+      // sx={{
+      //   backgroundColor: "#0e2b3c;",
+      // }}
     >
       <Container maxWidth="xxl">
         <Toolbar disableGutters className="toolbar">
@@ -90,6 +93,7 @@ const Navbar = () => {
               color: "inherit",
               textDecoration: "none",
               fontSize: "3rem",
+              textAlign: "center",
             }}
           >
             gultekin blog

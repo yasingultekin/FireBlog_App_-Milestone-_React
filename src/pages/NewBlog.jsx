@@ -28,7 +28,7 @@ export default function NewBlog({ info, setInfo, handleSubmit }) {
     setInfo({
       ...info,
       [name]: value,
-      [date]: new Date().toLocaleString("tr-TR"),
+      [date]: new Date().toString.split(" "),
     });
   };
 

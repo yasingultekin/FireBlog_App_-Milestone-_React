@@ -6,6 +6,7 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
+  Container,
   createTheme,
   IconButton,
   Stack,
@@ -50,7 +51,13 @@ const Details = () => {
   console.log("state", state);
 
   return (
-    <div className="details-container">
+    <Container
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <Box
         sx={{
           m: 1,
@@ -72,11 +79,9 @@ const Details = () => {
           ─── DETAILS ───
         </Typography>
         {isLoading ? (
-          <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-            <TableCell colSpan={5} align="center">
-              Loading
-            </TableCell>
-          </TableRow>
+          <div className="spinner-border text-primary m-5" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
         ) : (
           <Card sx={{ width: 650, mt: 3 }} className="card-content">
             <CardHeader />
@@ -100,6 +105,14 @@ const Details = () => {
                 }}
               >
                 {state.title}
+              </Typography>
+
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ fontSize: "1rem" }}
+              >
+                {state.date}
               </Typography>
 
               <Typography variant="body2" color="text.secondary">
@@ -167,7 +180,7 @@ const Details = () => {
           </Button>
         </CardActions>
       </Box>
-    </div>
+    </Container>
   );
 };
 

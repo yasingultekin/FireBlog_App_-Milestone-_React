@@ -35,9 +35,9 @@ const Dashboard = () => {
       </Box>
       <div className="blog-card d-flex justify-content-center flex-wrap">
         {isLoading ? (
-          <Box>
-            <img src={loading} alt="loading" />
-          </Box>
+          <div className="spinner-border text-primary m-5" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
         ) : (
           contentList?.map((item, index) => <BlogCard key={index} {...item} />)
         )}
