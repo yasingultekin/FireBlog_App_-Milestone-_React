@@ -38,10 +38,10 @@ export const createUser = async (email, password, navigate, displayName) => {
       password
     );
     console.log(userCredential);
-    toastSuccessNotify("Registered successfully!");
+    toastSuccessNotify("Yeni Kayıt Başarıyla Oluşturuldu. Hoş Geldiniz!");
     navigate("/");
   } catch (err) {
-    toastErrorNotify(err.message);
+    toastErrorNotify("Kayıt Oluşturulamadı. Lütfen yeniden deneyiniz!");
   }
 };
 
@@ -53,10 +53,10 @@ export const signIn = async (email, password, navigate) => {
       password
     );
     console.log(userCredential);
-    toastSuccessNotify("Logged in successfully!");
+    toastSuccessNotify("Hoş Geldiniz!");
     navigate("/");
   } catch (err) {
-    toastErrorNotify(err.message);
+    // toastErrorNotify("Giriş yapılamadı. Lütfen yeniden deneyin!");
   }
 };
 
@@ -73,18 +73,18 @@ export const userObserver = (setCurrentUser) => {
 export const logOut = (navigate) => {
   signOut(auth);
   navigate("login");
-  toastSuccessNotify("Logged out successfully!");
+  toastSuccessNotify("Başarıyla çıkış yapıldı!");
 };
 
 export const signUpProvider = (navigate) => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
-      toastSuccessNotify("Logged in successfully!");
+      toastSuccessNotify("Hoş Geldiniz!");
       navigate("/");
     })
     .catch((err) => {
-      toastErrorNotify(err.message);
+      // toastErrorNotify("Giriş yapılamadı. Lütfen yeniden deneyin!");
     });
 };
 
