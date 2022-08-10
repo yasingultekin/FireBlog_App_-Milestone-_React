@@ -58,7 +58,7 @@ const Navbar = () => {
     <AppBar
       className="appBar"
       sx={{
-        backgroundColor: "primary",
+        backgroundColor: "warning",
       }}
     >
       <Container maxWidth="xl">
