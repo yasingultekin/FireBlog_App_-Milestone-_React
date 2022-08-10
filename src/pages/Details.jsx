@@ -150,7 +150,11 @@ const Details = () => {
           </Stack>
         )}
         <CardActions className="home-button">
-          <Button size="large" onClick={() => navigate("/")}>
+          <Button
+            // sx={{ backgroundColor: "purple", color: "white" }}
+            size="large"
+            onClick={() => navigate("/")}
+          >
             HOME
           </Button>
         </CardActions>
