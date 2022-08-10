@@ -6,6 +6,7 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
+  createTheme,
   IconButton,
   Stack,
   TableCell,
@@ -27,6 +28,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import { AuthContext } from "../contexts/AuthContext";
+import { orange } from "@mui/material/colors";
+import BorderColorIcon from "@mui/icons-material/BorderColor";
+import HomeIcon from "@mui/icons-material/Home";
 
 const Details = () => {
   const navigate = useNavigate();
@@ -134,7 +138,9 @@ const Details = () => {
             sx={{ m: 4, justifyContent: "center" }}
           >
             <Button
-              variant="outlined"
+              variant="contained"
+              color="primary"
+              endIcon={<BorderColorIcon />}
               onClick={() => navigate("/update", { state: state })}
             >
               UPDATE
@@ -151,8 +157,10 @@ const Details = () => {
         )}
         <CardActions className="home-button">
           <Button
-            // sx={{ backgroundColor: "purple", color: "white" }}
+            variant="contained"
             size="large"
+            color="secondary"
+            endIcon={<HomeIcon />}
             onClick={() => navigate("/")}
           >
             HOME
