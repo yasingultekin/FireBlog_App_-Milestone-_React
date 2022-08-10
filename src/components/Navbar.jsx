@@ -66,7 +66,7 @@ const Navbar = () => {
         backgroundColor: "warning",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xxl">
         <Toolbar disableGutters className="toolbar">
           <Box
             sx={{ width: "50px", height: "75px" }}

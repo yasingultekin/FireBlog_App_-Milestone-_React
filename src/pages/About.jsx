@@ -1,6 +1,10 @@
-import { Box, CardMedia, Typography } from "@mui/material";
+import { Box, CardMedia, Link, Typography } from "@mui/material";
+import { Button } from "bootstrap";
 import React from "react";
 import coding from "../assets/coding.svg";
+import github from "../assets/github.png";
+import linkedin from "../assets/linkedin.png";
+import gmail from "../assets/gmail.png";
 
 const About = () => {
   return (
@@ -38,6 +42,23 @@ const About = () => {
       <Typography variant="body1" gutterBottom>
         You can contact me.
       </Typography>
+      <Typography variant="h6" component="div" gutterBottom>
+        yasingultekin13@gmail.com
+      </Typography>
+      <Box>
+        <Link
+          href="https://www.linkedin.com/in/yasin-g%C3%BCltekin-374847224/"
+          underline="none"
+          className="img-about"
+        >
+          <img src={linkedin} className="img-linkedin" alt="linkedin" />{" "}
+          <span>LinkedIn Profile</span>
+        </Link>
+        <Link href="https://github.com/yasingultekin" underline="none">
+          <img src={github} className="img-github" alt="github" />{" "}
+          <span>GitHub Page</span>
+        </Link>
+      </Box>
     </Box>
   );
 };
