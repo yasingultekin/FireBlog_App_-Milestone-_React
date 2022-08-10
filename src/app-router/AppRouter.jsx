@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { AuthContext } from "../contexts/AuthContext";
 import { AddUser } from "../helpers/functions";
+import About from "../pages/About";
 import Dashboard from "../pages/Dashboard";
 import Details from "../pages/Details";
 import Login from "../pages/Login";
@@ -66,6 +67,7 @@ const AppRouter = () => {
           }
         />
         <Route path="logout" element={<Login />} />
+        <Route path="about" element={<About />} />
         <Route
           path="update"
           element={
