@@ -15,7 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import clarusway from "../assets/cw.jpeg";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Login from "../pages/Login";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { logOut } from "../helpers/firebase";
@@ -31,6 +31,7 @@ const hover = {
 
 const Navbar = () => {
   const currentUser = useContext(AuthContext);
+  // console.log("navbar", currentUser.email);
   const navigate = useNavigate();
 
   // const currentUser = { displayName: "yasin gultekin" };
@@ -52,6 +53,10 @@ const Navbar = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const handleLogOut = () => {
+    logOut(navigate);
   };
 
   return (
@@ -89,134 +94,80 @@ const Navbar = () => {
           >
             gultekin blog
           </Typography>
-          <div className="d-flex text white align-items-center">
-            {currentUser ? (
-              <>
-                <h5 className="mb-0 text-capitalize">
-                  {currentUser.displayName}
-                </h5>
-                <Box sx={{ flexGrow: 0 }}>
-                  <IconButton onClick={handleOpenUserMenu} sx={{ pr: 0 }}>
-                    <AccountCircleIcon
-                      sx={{ fontSize: "2rem", color: "white" }}
-                    />
-                  </IconButton>
-                  <Menu
-                    sx={{ mt: "45px" }}
-                    id="menu-appbar"
-                    anchorEl={anchorElUser}
-                    anchorOrigin={{
-                      vertical: "top",
-                      horizontal: "center",
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "center",
-                    }}
-                    open={Boolean(anchorElUser)}
-                    onClose={handleCloseUserMenu}
-                  >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        width: "5rem",
-                      }}
+          <Box sx={{ flexGrow: 0 }}>
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <AccountCircleIcon fontSize="large" sx={{ color: "white" }} />
+            </IconButton>
+            <Menu
+              sx={{ mt: "45px" }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {currentUser ? (
+                <div>
+                  <MenuItem>
+                    <Typography
+                      onClick={() => navigate("about")}
+                      textAlign="center"
                     >
-                      <NavLink
-                        to="profile"
-                        style={{
-                          textDecoration: "none",
-                          color: "black",
-                        }}
-                        className="navlink"
-                      >
-                        <Typography textAlign="center" m=".5rem">
-                          Profile
-                        </Typography>
-                      </NavLink>
-                      <NavLink
-                        to="newblog"
-                        style={{ textDecoration: "none", color: "black" }}
-                        className="navlink"
-                      >
-                        <Typography textAlign="center" mb=".5rem">
-                          New
-                        </Typography>
-                      </NavLink>
-                      <NavLink
-                        to="login"
-                        style={{ textDecoration: "none", color: "black" }}
-                        className="navlink"
-                      >
-                        <Typography
-                          textAlign="center"
-                          mb=".5rem"
-                          onClick={() => logOut()}
-                        >
-                          Logout
-                        </Typography>
-                      </NavLink>
-                    </Box>
-                  </Menu>
-                </Box>
-              </>
-            ) : (
-              <>
-                <Box sx={{ flexGrow: 0 }}>
-                  <IconButton onClick={handleOpenUserMenu} sx={{ pr: 0 }}>
-                    <AccountCircleIcon />
-                  </IconButton>
-                  <Menu
-                    sx={{ mt: "45px" }}
-                    id="menu-appbar"
-                    anchorEl={anchorElUser}
-                    anchorOrigin={{
-                      vertical: "top",
-                      horizontal: "center",
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "center",
-                    }}
-                    open={Boolean(anchorElUser)}
-                    onClose={handleCloseUserMenu}
-                  >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        width: "5rem",
-                      }}
+                      About
+                    </Typography>
+                  </MenuItem>
+                  <MenuItem>
+                    <Typography
+                      onClick={() => navigate("newblog")}
+                      textAlign="center"
                     >
-                      <NavLink
-                        to="login"
-                        style={{ textDecoration: "none", color: "black" }}
-                        className="navlink"
-                      >
-                        <Typography textAlign="center" m=".5rem">
-                          Login
-                        </Typography>
-                      </NavLink>
-                      <NavLink
-                        to="register"
-                        style={{
-                          textDecoration: "none",
-                          color: "black",
-                          height: "2.3rem",
-                        }}
-                        className="navlink"
-                      >
-                        <Typography textAlign="center">Register</Typography>
-                      </NavLink>
-                    </Box>
-                  </Menu>
-                </Box>
-              </>
-            )}
-          </div>
+                      New Blog
+                    </Typography>
+                  </MenuItem>
+                  <MenuItem>
+                    <Typography
+                      onClick={() => navigate("profile")}
+                      textAlign="center"
+                    >
+                      Profile
+                    </Typography>
+                  </MenuItem>
+                  <MenuItem>
+                    <Typography onClick={handleLogOut} textAlign="center">
+                      Logout
+                    </Typography>
+                  </MenuItem>
+                </div>
+              ) : (
+                <div>
+                  <MenuItem>
+                    <Typography
+                      onClick={() => navigate("/login")}
+                      textAlign="center"
+                    >
+                      Login
+                    </Typography>
+                  </MenuItem>
+                  <MenuItem>
+                    <Typography
+                      onClick={() => navigate("/register")}
+                      textAlign="center"
+                    >
+                      Register
+                    </Typography>
+                  </MenuItem>
+                </div>
+              )}
+            </Menu>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

@@ -70,8 +70,9 @@ export const userObserver = (setCurrentUser) => {
   });
 };
 
-export const logOut = () => {
+export const logOut = (navigate) => {
   signOut(auth);
+  navigate("login");
   toastSuccessNotify("Logged out successfully!");
 };
 
