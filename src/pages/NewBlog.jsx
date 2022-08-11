@@ -37,7 +37,7 @@ export default function NewBlog({ info, setInfo, handleSubmit }) {
         maxWidth="xxl"
         sx={{
           backgroundColor: "white",
-          mt: 13,
+          mt: 23,
         }}
         className="new-blog-container"
       >

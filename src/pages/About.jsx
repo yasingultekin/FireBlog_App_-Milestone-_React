@@ -10,7 +10,7 @@ const About = () => {
   return (
     <Box
       sx={{
-        mt: 13,
+        mt: 18,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

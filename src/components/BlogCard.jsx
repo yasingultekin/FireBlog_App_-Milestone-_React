@@ -37,13 +37,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard({
-  title,
-  img,
-  content,
-  email,
-  id,
-}) {
+export default function RecipeReviewCard({ title, img, content, email, id }) {
   const navigate = useNavigate();
   const info = [
     {
@@ -97,7 +91,7 @@ export default function RecipeReviewCard({
               <Typography
                 variant="body2"
                 color="text.secondary"
-                sx={{ fontSize: "1rem" }}
+                sx={{ fontSize: "1rem", textAlign: "justify" }}
               >
                 {`${content.substring(0, 165)}...`}
               </Typography>

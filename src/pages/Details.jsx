@@ -78,64 +78,64 @@ const Details = () => {
         >
           ─── DETAILS ───
         </Typography>
-        {isLoading ? (
-          <div className="spinner-border text-primary m-5" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
-        ) : (
-          <Card sx={{ width: 650, mt: 3 }} className="card-content">
-            <CardHeader />
 
-            <CardMedia
-              component="img"
-              height="350"
-              image={state.img ? state.img : placeholder}
-              alt={state.title}
-            />
+        <Card sx={{ mt: 3 }} className="card-content">
+          <CardHeader />
 
-            <CardContent>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{
-                  fontSize: "1.2rem",
-                  color: "black",
-                  textTransform: "capitalize",
-                  mb: 2,
-                }}
-              >
-                {state.title}
-              </Typography>
+          <CardMedia
+            component="img"
+            height="450"
+            image={state.img ? state.img : placeholder}
+            alt={state.title}
+            className="details-image"
+          />
 
-              <Typography variant="body2" color="text.secondary">
-                {state.content}
-              </Typography>
+          <CardContent>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{
+                fontSize: "1.2rem",
+                color: "black",
+                textTransform: "capitalize",
+                mb: 2,
+              }}
+            >
+              {state.title}
+            </Typography>
 
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{
-                  mt: 3,
-                  fontSize: "1.2rem",
-                  color: "black",
-                }}
-              >
-                <AccountCircleRoundedIcon /> {state.email}
-              </Typography>
-            </CardContent>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ textAlign: "justify" }}
+            >
+              {state.content}
+            </Typography>
 
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>{" "}
-              0
-              <IconButton aria-label="add to favorites">
-                <ModeCommentOutlinedIcon />
-              </IconButton>{" "}
-              0
-            </CardActions>
-          </Card>
-        )}
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{
+                mt: 3,
+                fontSize: "1.2rem",
+                color: "black",
+              }}
+            >
+              <AccountCircleRoundedIcon /> {state.email}
+            </Typography>
+          </CardContent>
+
+          <CardActions disableSpacing>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
+            </IconButton>{" "}
+            0
+            <IconButton aria-label="add to favorites">
+              <ModeCommentOutlinedIcon />
+            </IconButton>{" "}
+            0
+          </CardActions>
+        </Card>
 
         {state.email === currentUser.email && (
           <Stack
@@ -178,3 +178,39 @@ const Details = () => {
 };
 
 export default Details;
+
+// {state.email === currentUser.email && (
+//   <Stack
+//     direction="row"
+//     spacing={2}
+//     sx={{ m: 4, justifyContent: "center" }}
+//   >
+//     <Button
+//       variant="contained"
+//       color="primary"
+//       endIcon={<BorderColorIcon />}
+//       onClick={() => navigate("/update", { state: state })}
+//     >
+//       UPDATE
+//     </Button>
+//     <Button
+//       variant="contained"
+//       color="error"
+//       onClick={handleDelete}
+//       endIcon={<DeleteIcon />}
+//     >
+//       Delete
+//     </Button>
+//   </Stack>
+// )}
+// <CardActions className="home-button">
+//   <Button
+//     variant="contained"
+//     size="large"
+//     color="secondary"
+//     endIcon={<HomeIcon />}
+//     onClick={() => navigate("/")}
+//   >
+//     HOME
+//   </Button>
+// </CardActions>
