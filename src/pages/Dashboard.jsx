@@ -30,7 +30,7 @@ const Dashboard = () => {
             color: "primary.dark",
           }}
         >
-          ──── DASHBOARD ───
+          ── DASHBOARD ──
         </Typography>
       </Box>
       <div className="blog-card d-flex justify-content-center flex-wrap">
