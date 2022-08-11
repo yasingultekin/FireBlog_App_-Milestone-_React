@@ -32,6 +32,7 @@ export default function MediaCard() {
         height="300"
         image="https://picsum.photos/1600/900"
         alt="green iguana"
+        sx={{ mt: 23 }}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
