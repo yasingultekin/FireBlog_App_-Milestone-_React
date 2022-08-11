@@ -43,7 +43,6 @@ export default function RecipeReviewCard({
   content,
   email,
   id,
-  date,
 }) {
   const navigate = useNavigate();
   const info = [
@@ -53,7 +52,6 @@ export default function RecipeReviewCard({
       content: content,
       id: id,
       email: email,
-      date: date,
     },
   ];
   // console.log(info);
@@ -68,7 +66,7 @@ export default function RecipeReviewCard({
   return (
     <Card sx={{ width: 400, m: 3 }} className="card-content">
       {info.map((item) => {
-        const { title, img, content, id, email, date } = item;
+        const { title, img, content, id, email } = item;
         return (
           <>
             <CardHeader />
@@ -94,14 +92,6 @@ export default function RecipeReviewCard({
                 }}
               >
                 {title}
-              </Typography>
-
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ fontSize: "1rem" }}
-              >
-                {date}
               </Typography>
 
               <Typography

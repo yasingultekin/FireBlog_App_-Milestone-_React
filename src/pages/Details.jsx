@@ -107,14 +107,6 @@ const Details = () => {
                 {state.title}
               </Typography>
 
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ fontSize: "1rem" }}
-              >
-                {state.date}
-              </Typography>
-
               <Typography variant="body2" color="text.secondary">
                 {state.content}
               </Typography>
