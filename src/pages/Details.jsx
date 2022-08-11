@@ -73,7 +73,7 @@ const Details = () => {
             fontFamily: "Girassol",
             color: "primary.dark",
             textAlign: "center",
-            marginTop: "7rem",
+            marginTop: "8rem",
           }}
         >
           ─── DETAILS ───
