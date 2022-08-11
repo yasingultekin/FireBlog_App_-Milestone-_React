@@ -78,7 +78,7 @@ export default function NewBlog({ info, setInfo, handleSubmit }) {
                   color: "primary.dark",
                 }}
               >
-                ──── NEW BLOG ────
+                ─── NEW BLOG ───
               </Typography>
             </Box>
             <Box

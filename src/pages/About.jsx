@@ -28,19 +28,19 @@ const About = () => {
       <Typography variant="h4" component="div" gutterBottom sx={{ m: "2rem" }}>
         I'm Yasin.
       </Typography>
-      <Typography variant="body1" gutterBottom>
+      <Typography variant="body2" gutterBottom>
         I am a front-end developer.
       </Typography>
-      <Typography variant="body1" gutterBottom>
+      <Typography variant="body2" gutterBottom>
         I prefer React for front-end development.
       </Typography>
-      <Typography variant="body1" gutterBottom>
+      <Typography variant="body2" gutterBottom>
         React, Git, GitHub, JavaScript, Python, HTML5, CSS3.
       </Typography>
-      <Typography variant="body1" gutterBottom>
+      <Typography variant="body2" gutterBottom>
         Don't hesitate to ask me about anything that you want to learn.
       </Typography>
-      <Typography variant="body1" gutterBottom>
+      <Typography variant="body2" gutterBottom>
         You can contact me.
       </Typography>
       <Typography variant="h6" component="div" gutterBottom>
