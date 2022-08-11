@@ -18,6 +18,7 @@ const About = () => {
       }}
     >
       <CardMedia
+        className="about"
         component="img"
         image={coding}
         alt={coding}
