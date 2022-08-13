@@ -22,7 +22,6 @@
   - <b>useEffect</b>
   - import/export
   - <b>Props</b>
-  - React <b>Developer Tool</b>
   - Destructuring props
   - array <b>map</b> method
   - array <b>filter</b> method
